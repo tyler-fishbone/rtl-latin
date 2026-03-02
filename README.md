@@ -13,14 +13,23 @@ Vite will start a dev server on localhost, typically `http://localhost:5173`.
 
 ## What the demo shows
 
-- A native Hebrew line rendered in RTL with right alignment
-- A phonetic/transliteration gloss line underneath
-- A meaning/translation gloss line underneath
+- A side-by-side comparison between a conventional gloss layout and an aligned RTL-reading layout
+- A Hebrew phrase with transliteration and English translation
 - A toggle between:
   - Mode A: mirrored font + RTL
   - Mode B: normal Latin font + LTR
-- A font-size slider for quick visual comparison
-- A copy button per card that copies the three-line block as plain text with line breaks
+- A font-size slider for visual comparison
+- A copy button for the aligned three-line block
+- A specimen section for inspecting mirrored Latin glyphs
+
+## Reading-path idea
+
+The core argument of the site is not just that the font exists, but that it may improve the reading experience for Hebrew learners.
+
+- Conventional layouts often place transliteration on the left, Hebrew on the right, and translation below
+- That forces the eye to jump between separate zones to connect one phrase
+- RTL Latin tries to keep Hebrew, transliteration, and English glosses on the same right-anchored reading path
+- The site is designed to make that contrast visible immediately
 
 ## RTL CSS notes
 
