@@ -1,8 +1,8 @@
 @font-face {
-  font-family: "Inter Mirror";
+  font-family: "RTL Latin";
   src:
-    url("/fonts/InterMirror-Regular.woff2") format("woff2"),
-    url("/fonts/InterMirror-Regular.otf") format("opentype");
+    url("/fonts/RTLLatin-Regular.woff2") format("woff2"),
+    url("/fonts/RTLLatin-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;

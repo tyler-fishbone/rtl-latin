@@ -14,7 +14,7 @@ type DemoExample = {
 };
 
 const MIRROR_FONT_STACK =
-  '"Inter Mirror", "Nital LTR", "InterMirror", system-ui, sans-serif';
+  '"RTL Latin", "RTLLatin", system-ui, sans-serif';
 
 const EXAMPLES: DemoExample[] = [
   {
@@ -84,18 +84,18 @@ function App() {
     >
       <section className="hero">
         <p className="eyebrow">Interlinear RTL Glossing Demo</p>
-        <h1>Mirrored Latin gloss lines under Hebrew and Arabic</h1>
+        <h1>RTL Latin gloss lines under Hebrew and Arabic</h1>
         <p className="intro">
-          This proof of concept uses a mirrored Latin font plus RTL CSS to make
+          This proof of concept uses RTL Latin plus RTL CSS to make
           transliteration and meaning lines visually flow with Semitic source
           text. Switch modes to compare the mirrored presentation with ordinary
-          LTR Latin text.
+          LTR Latin text, and download the font files directly from this page.
         </p>
         <div className="hero-actions">
-          <a className="download-link" href="/fonts/InterMirror-Regular.otf" download>
+          <a className="download-link" href="/fonts/RTLLatin-Regular.otf" download>
             Download OTF
           </a>
-          <a className="download-link download-link-secondary" href="/fonts/InterMirror-Regular.woff2" download>
+          <a className="download-link download-link-secondary" href="/fonts/RTLLatin-Regular.woff2" download>
             Download WOFF2
           </a>
         </div>

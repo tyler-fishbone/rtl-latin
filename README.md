@@ -1,6 +1,6 @@
-# Nital LTR Demo
+# RTL Latin Demo
 
-Local proof-of-concept site for interlinear glossing under Hebrew and Arabic using a mirrored Latin font.
+Local proof-of-concept site for interlinear glossing under Hebrew and Arabic using the RTL Latin mirrored font.
 
 ## Run locally
 
@@ -43,13 +43,13 @@ That combination forces Latin gloss text to visually stack and align with the RT
 
 ```ts
 const MIRROR_FONT_STACK =
-  '"Inter Mirror", "Nital LTR", "InterMirror", system-ui, sans-serif';
+  '"RTL Latin", "RTLLatin", system-ui, sans-serif';
 ```
 
-This repo now bundles the real font files in `public/fonts/`:
+This repo now bundles the real `RTL Latin` font files in `public/fonts/`:
 
-- `InterMirror-Regular.woff2` for browser use
-- `InterMirror-Regular.otf` for download and installation
+- `RTLLatin-Regular.woff2` for browser use
+- `RTLLatin-Regular.otf` for download and installation
 
 The site loads the font with `@font-face` and also exposes direct download links from the page.
 
@@ -59,10 +59,10 @@ The app loads the font from `src/styles.css`:
 
 ```css
 @font-face {
-  font-family: "Inter Mirror";
+  font-family: "RTL Latin";
   src:
-    url("/fonts/InterMirror-Regular.woff2") format("woff2"),
-    url("/fonts/InterMirror-Regular.otf") format("opentype");
+    url("/fonts/RTLLatin-Regular.woff2") format("woff2"),
+    url("/fonts/RTLLatin-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
   font-display: swap;
