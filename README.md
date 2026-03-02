@@ -1,6 +1,6 @@
 # RTL Latin Demo
 
-Local proof-of-concept site for interlinear glossing under Hebrew and Arabic using the RTL Latin mirrored font.
+Local proof-of-concept site for Biblical and liturgical Hebrew glossing using the RTL Latin mirrored font.
 
 ## Run locally
 
@@ -13,7 +13,7 @@ Vite will start a dev server on localhost, typically `http://localhost:5173`.
 
 ## What the demo shows
 
-- A native Hebrew or Arabic line rendered in RTL with right alignment
+- A native Hebrew line rendered in RTL with right alignment
 - A phonetic/transliteration gloss line underneath
 - A meaning/translation gloss line underneath
 - A toggle between:
@@ -50,8 +50,20 @@ This repo now bundles the real `RTL Latin` font files in `public/fonts/`:
 
 - `RTLLatin-Regular.woff2` for browser use
 - `RTLLatin-Regular.otf` for download and installation
+- `OFL.txt` for redistribution and license packaging
 
 The site loads the font with `@font-face` and also exposes direct download links from the page.
+
+## Font metadata and packaging
+
+- Family name: `RTL Latin`
+- Full name: `RTL Latin Regular`
+- PostScript name: `RTLLatin-Regular`
+- Designer: `Rasmus Andersson`
+- Manufacturer: `rsms`
+- License: `SIL Open Font License 1.1`
+
+If you redistribute the font files, include `public/OFL.txt` with them.
 
 ## Bundled font setup
 

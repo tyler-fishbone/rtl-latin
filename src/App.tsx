@@ -13,6 +13,11 @@ type DemoExample = {
   meaningText: string;
 };
 
+type SpecimenRow = {
+  label: string;
+  text: string;
+};
+
 const MIRROR_FONT_STACK =
   '"RTL Latin", "RTLLatin", system-ui, sans-serif';
 
@@ -27,15 +32,24 @@ const EXAMPLES: DemoExample[] = [
     phoneticText: 'shalom olam',
     meaningText: 'peace world',
   },
+];
+
+const SPECIMEN_ROWS: SpecimenRow[] = [
   {
-    id: 'arabic',
-    language: 'Arabic',
-    nativeLabel: 'Native',
-    phoneticLabel: 'Phonetic',
-    meaningLabel: 'Meaning',
-    nativeText: 'السَّلَامُ عَلَيْكُمْ',
-    phoneticText: 'as-salāmu ʿalaykum',
-    meaningText: 'peace be upon you',
+    label: 'Uppercase',
+    text: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  },
+  {
+    label: 'Lowercase',
+    text: 'abcdefghijklmnopqrstuvwxyz',
+  },
+  {
+    label: 'Numerals',
+    text: '0123456789',
+  },
+  {
+    label: 'Punctuation',
+    text: '.,;:!?()[]{}<>/\\@#%&+-=',
   },
 ];
 
@@ -84,12 +98,14 @@ function App() {
     >
       <section className="hero">
         <p className="eyebrow">Interlinear RTL Glossing Demo</p>
-        <h1>RTL Latin gloss lines under Hebrew and Arabic</h1>
+        <h1>RTL Latin gloss lines for Biblical and liturgical Hebrew</h1>
         <p className="intro">
           This proof of concept uses RTL Latin plus RTL CSS to make
-          transliteration and meaning lines visually flow with Semitic source
-          text. Switch modes to compare the mirrored presentation with ordinary
-          LTR Latin text, and download the font files directly from this page.
+          transliteration and meaning lines visually flow with Hebrew source
+          text. The main use case here is interlinear glossing for Biblical and
+          liturgical Hebrew. Switch modes to compare the mirrored presentation
+          with ordinary LTR Latin text, and download the font files directly
+          from this page.
         </p>
         <div className="hero-actions">
           <a className="download-link" href="/fonts/RTLLatin-Regular.otf" download>
@@ -98,7 +114,57 @@ function App() {
           <a className="download-link download-link-secondary" href="/fonts/RTLLatin-Regular.woff2" download>
             Download WOFF2
           </a>
+          <a className="download-link download-link-secondary" href="/OFL.txt" download>
+            Download OFL
+          </a>
         </div>
+      </section>
+
+      <section className="info-grid" aria-label="Font metadata and install notes">
+        <article className="info-card">
+          <p className="card-kicker">Metadata</p>
+          <h2>Font details</h2>
+          <dl className="meta-list">
+            <div>
+              <dt>Family</dt>
+              <dd>RTL Latin</dd>
+            </div>
+            <div>
+              <dt>Style</dt>
+              <dd>Regular</dd>
+            </div>
+            <div>
+              <dt>PostScript</dt>
+              <dd>RTLLatin-Regular</dd>
+            </div>
+            <div>
+              <dt>Designer</dt>
+              <dd>Rasmus Andersson</dd>
+            </div>
+            <div>
+              <dt>Manufacturer</dt>
+              <dd>rsms</dd>
+            </div>
+            <div>
+              <dt>License</dt>
+              <dd>SIL Open Font License 1.1</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article className="info-card">
+          <p className="card-kicker">Install</p>
+          <h2>Use it locally or on the web</h2>
+          <ul className="note-list">
+            <li>Install the OTF on your system for desktop use in editors and design tools.</li>
+            <li>Use the bundled WOFF2 with `@font-face` for websites.</li>
+            <li>Ship `OFL.txt` alongside the font files when redistributing the package.</li>
+          </ul>
+          <p className="license-note">
+            This renamed derivative keeps attribution to Inter while avoiding the
+            original reserved font name in the distributed family name.
+          </p>
+        </article>
       </section>
 
       <section className="control-panel" aria-label="Demo controls">
@@ -174,6 +240,29 @@ function App() {
             </article>
           );
         })}
+      </section>
+
+      <section className="specimen-panel" aria-label="RTL Latin specimen">
+        <div className="specimen-heading">
+          <div>
+            <p className="card-kicker">Specimen</p>
+            <h2>Glyph runs and mirrored flow</h2>
+          </div>
+          <p className="specimen-copy">
+            These strings are rendered in the actual bundled font so visitors can
+            inspect the character set before downloading.
+          </p>
+        </div>
+
+        <div className="specimen-grid">
+          {SPECIMEN_ROWS.map((row) => (
+            <article key={row.label} className="specimen-card">
+              <p className="line-label">{row.label}</p>
+              <p className="specimen-line specimen-line-mirror">{row.text}</p>
+              <p className="specimen-line specimen-line-plain">{row.text}</p>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   );

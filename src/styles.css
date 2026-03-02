@@ -101,6 +101,65 @@ input {
   border-color: rgba(82, 57, 21, 0.3);
 }
 
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.info-card,
+.specimen-panel {
+  padding: 20px;
+  border-radius: 24px;
+  border: 1px solid rgba(82, 57, 21, 0.18);
+  background: rgba(255, 250, 243, 0.88);
+  box-shadow: 0 20px 45px rgba(67, 48, 23, 0.06);
+}
+
+.info-card h2,
+.specimen-heading h2 {
+  margin: 4px 0 12px;
+  font-size: 1.35rem;
+}
+
+.meta-list {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.meta-list div {
+  display: grid;
+  gap: 4px;
+}
+
+.meta-list dt {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #775f42;
+}
+
+.meta-list dd {
+  margin: 0;
+  color: #2d2318;
+}
+
+.note-list {
+  margin: 0 0 14px;
+  padding-left: 18px;
+  color: #4c3f31;
+  line-height: 1.6;
+}
+
+.license-note,
+.specimen-copy {
+  margin: 0;
+  color: #4c3f31;
+  line-height: 1.6;
+}
+
 .control-panel {
   display: flex;
   flex-wrap: wrap;
@@ -173,6 +232,7 @@ input {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 18px;
+  margin-bottom: 26px;
 }
 
 .demo-card {
@@ -228,7 +288,7 @@ input {
 .native-line .line-content {
   direction: rtl;
   text-align: right;
-  font-family: "Noto Sans Hebrew", "Noto Naskh Arabic", serif;
+  font-family: "Noto Sans Hebrew", serif;
 }
 
 .gloss-line .line-content {
@@ -248,13 +308,65 @@ input {
   font-family: system-ui, sans-serif;
 }
 
+.specimen-heading {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.specimen-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(82, 57, 21, 0.08);
+}
+
+.specimen-card .line-label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.specimen-line {
+  margin: 0;
+  font-size: clamp(1.3rem, 2vw, 1.7rem);
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.specimen-line + .specimen-line {
+  margin-top: 10px;
+}
+
+.specimen-line-mirror {
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  text-align: right;
+  font-family: var(--mirror-font-family);
+}
+
+.specimen-line-plain {
+  direction: ltr;
+  text-align: left;
+  color: #6b5a46;
+  font-family: system-ui, sans-serif;
+}
+
 @media (max-width: 700px) {
   .app-shell {
     padding-top: 28px;
   }
 
   .control-panel,
-  .card-header {
+  .card-header,
+  .specimen-heading {
     align-items: stretch;
   }
 
