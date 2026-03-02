@@ -46,24 +46,33 @@ const MIRROR_FONT_STACK =
   '"Inter Mirror", "Nital LTR", "InterMirror", system-ui, sans-serif';
 ```
 
-This repo assumes the mirrored font is already installed on your system. If it is not installed, the demo still runs using fallback fonts, but the true mirrored effect will not appear.
+This repo now bundles the real font files in `public/fonts/`:
 
-## Optional: bundle a local font file
+- `InterMirror-Regular.woff2` for browser use
+- `InterMirror-Regular.otf` for download and installation
 
-If you want the repo to ship with a local font instead of depending on a system-installed font:
+The site loads the font with `@font-face` and also exposes direct download links from the page.
 
-1. Put a `.woff2` file in `public/fonts/`, for example `public/fonts/nital-ltr.woff2`.
-2. Add an `@font-face` block near the top of `src/styles.css`:
+## Bundled font setup
+
+The app loads the font from `src/styles.css`:
 
 ```css
 @font-face {
-  font-family: "Nital LTR";
-  src: url("/fonts/nital-ltr.woff2") format("woff2");
+  font-family: "Inter Mirror";
+  src:
+    url("/fonts/InterMirror-Regular.woff2") format("woff2"),
+    url("/fonts/InterMirror-Regular.otf") format("opentype");
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
 }
 ```
 
-3. Keep `"Nital LTR"` in the `MIRROR_FONT_STACK` constant.
+If you replace the files later:
+
+1. Drop the replacement `.woff2` and `.otf` files into `public/fonts/`.
+2. Update the URLs in `@font-face` if the filenames change.
+3. Keep the family name aligned with `MIRROR_FONT_STACK` in `src/App.tsx`.
 
 No backend or external assets are required for the demo itself.

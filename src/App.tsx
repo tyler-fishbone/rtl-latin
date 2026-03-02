@@ -91,6 +91,14 @@ function App() {
           text. Switch modes to compare the mirrored presentation with ordinary
           LTR Latin text.
         </p>
+        <div className="hero-actions">
+          <a className="download-link" href="/fonts/InterMirror-Regular.otf" download>
+            Download OTF
+          </a>
+          <a className="download-link download-link-secondary" href="/fonts/InterMirror-Regular.woff2" download>
+            Download WOFF2
+          </a>
+        </div>
       </section>
 
       <section className="control-panel" aria-label="Demo controls">

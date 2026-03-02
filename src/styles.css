@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Inter Mirror";
+  src:
+    url("/fonts/InterMirror-Regular.woff2") format("woff2"),
+    url("/fonts/InterMirror-Regular.otf") format("opentype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -58,6 +68,37 @@ input {
   font-size: 1.02rem;
   line-height: 1.6;
   color: #4c3f31;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.download-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: #2d2318;
+  color: #f8f2e8;
+  text-decoration: none;
+  border: 1px solid #2d2318;
+  transition: transform 140ms ease, background-color 140ms ease, border-color 140ms ease;
+}
+
+.download-link:hover {
+  transform: translateY(-1px);
+}
+
+.download-link-secondary {
+  background: transparent;
+  color: #2d2318;
+  border-color: rgba(82, 57, 21, 0.3);
 }
 
 .control-panel {
